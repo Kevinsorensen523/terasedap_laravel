@@ -20,7 +20,6 @@ Route::get('/', function () {
     return redirect('menu');
 });
 
-
 Route::get('/menu', [MenuController::class, 'showMenu']);
 
 Route::get('/add-food-item', [FoodItemController::class, 'createForm']);
@@ -37,9 +36,6 @@ Route::delete('/add-food-item/{id}', [FoodItemController::class, 'destroy'])->na
 
 // Route for displaying the edit form for a food item
 Route::get('/add-food-item/{id}/edit', [FoodItemController::class, 'editForm'])->name('food_items.editForm');
-
-
-
 
 Route::post('/add-to-cart/{name}/{id}/{price}', [CartController::class, 'addToCart'])->name('cart.add');
 Route::post('/remove-from-cart/{id}', [CartController::class, 'removeFromCart'])->name('cart.remove');
