@@ -38,6 +38,12 @@
     <div class="welcome-heading">
         <h1>Welcome to the admin panel</h1>
         <h2>Menu</h2>
+        <select id="categoryFilter" onchange="filterFoodItems(this.value)">
+            <option value="all">All</option>
+                @foreach($categories as $categoryId => $categoryName)
+            <option value="{{ $categoryName }}">{{ $categoryName }}</option>
+                @endforeach
+        </select>
         <div class="menu-admin">
             @foreach($foodItems as $foodItem)
             <div class="menu-item-admin">
@@ -90,4 +96,22 @@
     </center>
 </body>
 
+<script>
+    function filterFoodItems(categoryId) {
+        var menuItems = document.querySelectorAll('.menu-item-admin');
+
+        menuItems.forEach(function (item) {
+            var category = item.querySelector('.food-categories-admin').innerText.trim();
+
+            if (categoryId === 'all' || category === categoryId) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    }
+</script>
+
+
 </html>
+

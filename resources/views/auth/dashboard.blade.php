@@ -14,11 +14,14 @@
                 @else
                     <div class="alert alert-success">
                         You are logged in!
-                    </div>       
+                    </div>
                 @endif                
             </div>
+            <button onclick="window.location.href='/add-food-item'" class="btn btn-primary">
+                Go to Add Food Item
+            </button>
         </div>
     </div>    
 </div>
-    
+
 @endsection
