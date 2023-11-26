@@ -31,6 +31,9 @@
                 <img src="{{ asset('images/' . $foodItem->image) }}" class="menu-img" alt="Food Image">
                 @endif
                 <div class="food-name-admin">{{ $foodItem->name }}</div>
+                <div class="food-categories-admin">
+                    {{ $foodItem->category->name }}
+                </div>
                 <div class="food-price-admin">Rp{{ $foodItem->price }}</div>
                 <div class="food-name-admin">{{ $foodItem->description }}</div>
                 <div class="edit-delete">

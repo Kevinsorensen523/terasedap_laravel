@@ -13,7 +13,7 @@
         <li>
             <strong>Name:</strong> {{ $item->name }}<br>
             <strong>Price:</strong> ${{ $item->price }}<br>
-            <strong>Category:</strong> {{ $item->category }}<br>
+            <strong>Category:</strong> {{ $item->category->name }}<br>
             <strong>Description:</strong> {{ $item->description }}<br><br>
         </li>
         @endforeach
