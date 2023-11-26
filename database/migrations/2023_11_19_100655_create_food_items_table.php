@@ -19,10 +19,11 @@ return new class extends Migration
             $table->decimal('price', 10, 2);
             $table->text('description')->nullable();
             $table->string('image')->nullable();
-            $table->unsignedBigInteger('category_id'); // New column for category relationship
+            $table->unsignedBigInteger('category_id')->nullable();
             $table->timestamps();
 
-            $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+
         });
     }
 

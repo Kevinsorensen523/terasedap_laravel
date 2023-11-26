@@ -5,6 +5,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\FoodItemController;
 use App\Http\Controllers\Auth\LoginRegisterController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,7 @@ Route::controller(LoginRegisterController::class)->group(function() {
     Route::post('/logout', 'logout')->name('logout');
 });
 
+Route::resource('categories', CategoryController::class);
 Route::get('/menu', [MenuController::class, 'showMenu']);
 
 Route::get('/add-food-item', [FoodItemController::class, 'createForm']);
