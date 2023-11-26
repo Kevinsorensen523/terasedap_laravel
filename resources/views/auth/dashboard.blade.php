@@ -20,6 +20,9 @@
             <button onclick="window.location.href='/add-food-item'" class="btn btn-primary">
                 Go to Add Food Item
             </button>
+            <button onclick="window.location.href='/categories'" class="btn btn-warning">
+                Go to Category CRUD
+            </button>
         </div>
     </div>    
 </div>
